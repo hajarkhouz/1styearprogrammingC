@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+        int i,n;
+        float tab[50] ;
+
+    printf("donner un entier n:\n");
+    scanf("%d",&n);
+
+    printf("\nlecture du tableau :\n");
+    
+    for(i=0 ;i<n;i++)
+    {
+        do{
+        
+        printf("\nsaisir un entier tab[%d]:",i);
+        scanf("%f",&tab[i]);
+    }while(tab[i]==0);
+    }
+    printf("\naffichage du tableau :\n");
+    for(i=0 ;i<n;i++)
+    {
+        printf(" tab[%d]=%.1f\n",i,tab[i]);
+    
+    }
+    /*calcul et affichage de la moyenne des éléments du tableau*/
+float somme,moyenne;
+somme=0;
+
+ for(i=0;i<n;i++){
+    somme=somme+tab[i];
+}
+    moyenne=somme/n;
+    printf("\nLa moyenne des valeurs du tableau est %.2f", moyenne);
+    
+    /*calcul min max*/
+    float max, min;
+        max = min = tab[0];
+
+    for(i=0; i<n; i++){
+           if(tab[i] > max)
+               max = tab[i];
+           if(tab[i] < min)
+               min = tab[i];
+    }
+    printf("\nLe max est : %f\n", max);
+    printf("\nLe min est :%f\n", min);
+/*OCCURENCE*/
+int c;
+float x;
+printf("donner la valeur de x:");
+scanf("%f",&x);
+for(i=0;i<n;i++){
+    if(x==tab[i])
+    c=c+1;
+}
+
+printf("les occurences sont :%d",c);
+    return 0;
+}
